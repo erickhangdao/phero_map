@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tiberia XXI - Team Phêro</title>
+  <link rel="icon" href="https://veym.net/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+      color: #111;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    .map-container {
+      position: relative;
+      width: 47%;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      /* overflow: hidden; */
+      background: white;
+    }
+    .map {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .marker {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #e63946;
+      border: 3px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transform: translate(-50%, -50%);
+      transition: transform 0.2s ease;
+      z-index: 1;
+    }
+    .marker:hover {
+      transform: translate(-50%, -50%) scale(1.2);
+      z-index: 1000;
+    }
+    .marker:hover .tooltip {
+      display: flex;
+    }
+    .tooltip {
+      display: none;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      color: #111;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-size: 1em;
+      font-weight: 500;
+      min-width: 220px;
+      z-index: 2000;
+    }
+    .tooltip img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+    .tooltip .info {
+      text-align: left;
+    }
+    .tooltip .info .name {
+      font-weight: 600;
+      font-size: 1.05em;
+    }
+    .tooltip .info .title {
+      font-size: 0.9em;
+      color: #666;
+    }
+    .marker::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      background: rgba(230, 57, 70, 0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .marker:hover::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(2.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <img 
+      src="assets/map.svg" 
+      alt="North America Map" 
+      class="map"
+    />
+
+    <!-- Arlington, TX -->
+    <div class="marker" style="top: 87%; left: 54%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Justinô Trân Justin" />
+        <div class="info">
+          <div class="name">Justinô Tran Justin</div>
+          <div class="title">Liên Đoàn Biển Đức<br>117 Thánh Tử Đạo Việt Nam<br>Arlington, TX</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Albuquerque, NM -->
+    <div class="marker" style="top: 81%; left: 42%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Giuse Bùi Minh Thiện Francis" />
+        <div class="info">
+          <div class="name">Giuse Bùi Minh Thiện Francis</div>
+          <div class="title">Liên Đoàn Biển Đức<br>Đức Mẹ La Vang<br>Albuquerque, NM</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lincoln, NE -->
+    <div class="marker" style="top: 53%; left: 44%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Giuse Mai Joseph-Tú Tommy" />
+        <div class="info">
+          <div class="name">Giuse Mai Joseph-Tú Tommy</div>
+          <div class="title">Liên Đoàn Gioan Phaolô II<br>Maria Nữ Vương<br>Lincoln, NE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seattle, WA -->
+    <div class="marker" style="top: 59%; left: 31%;">
+      <div class="tooltip">
+        <img src="assets/tom_truong.jpg" alt="Giuse Trương Tom" />
+        <div class="info">
+          <div class="name">Giuse Trương Tom</div>
+          <div class="title">Liên Đoàn Inhaxiô Loyola<br>Xaviê Cần<br>Seattle, WA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toronto, ON -->
+    <div class="marker" style="top: 69%; left: 75%;">
+      <div class="tooltip">
+        <img src="assets/eric_dao.jpg" alt="Phanxicô Xaviê Đào Eric-Khang" />
+        <div class="info">
+          <div class="name">Phanxicô Xaviê Đào Eric-Khang</div>
+          <div class="title">Liên Đoàn Kateri Tekakwitha<br>Tôma Thiện<br>Toronto, ON</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edmonton, AB -->
+    <div class="marker" style="top: 52%; left: 42%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Maria Ngô Thị Hương Lan" />
+        <div class="info">
+          <div class="name">Maria Ngô Thị Hương Lan</div>
+          <div class="title">Liên Đoàn St Augustino<br>Phanxicô Xaviê Nguyễn Văn Thuận<br>Edmonton, AB</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vancouver, BC -->
+    <div class="marker" style="top: 55%; left: 31%;">
+      <div class="tooltip">
+        <img src="assets/lilly_mai.jpg" alt="Maria Lê Lilly Mai" />
+        <div class="info">
+          <div class="name">Maria Lê Lilly Mai</div>
+          <div class="title">Holy Family<br>Thánh Giuse<br>Vancouver, BC</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wichita, KS -->
+    <div class="marker" style="top: 79%; left: 54%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Maria Goretti Trần Thủy Sharlene" />
+        <div class="info">
+          <div class="name">Maria Goretti Trần Thủy Sharlene</div>
+          <div class="title">Liên Đoàn Gioan Phaolô II<br>Kitô Vua<br>Wichita, KS</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fountain Valley, CA -->
+    <div class="marker" style="top: 81%; left: 29%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Maria Huỳnh Amor Vivian" />
+        <div class="info">
+          <div class="name">Maria Huỳnh Amor Vivian</div>
+          <div class="title">Liên Đoàn Nguồn Sống<br>Anê Thành<br>Fountain Valley, CA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- San Antonio, TX -->
+    <div class="marker" style="top: 92%; left: 51%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Maria Clara Nguyễn Hoàng Nysan" />
+        <div class="info">
+          <div class="name">Maria Clara Nguyễn Hoàng Nysan</div>
+          <div class="title">Liên Đoàn Biển Đức<br>Đa Minh Úy<br>San Antonio, TX</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stanton, CA -->
+    <div class="marker" style="top: 81%; left: 30%;">
+      <div class="tooltip">
+        <img src="assets/profile_pic.png" alt="Martha Lê Mỹ BảoVân" />
+        <div class="info">
+          <div class="name">Martha Lê Mỹ BảoVân</div>
+          <div class="title">Liên Đoàn Nguồn Sống<br>Thánh Polycarp<br>Stanton, CA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
