@@ -6,14 +6,17 @@
   <link rel="icon" href="https://veym.net/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f9fafb;
-      margin: 0;
-      padding: 40px 20px;
-      text-align: center;
-      color: #111;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: url('assets/background.png'); /* your image path */
+  background-repeat: repeat; /* 👈 tile the image */
+  background-size: 500px auto;     /* use image’s original size */
+  background-position: top left;
+  margin: 0;
+  padding: 40px 20px;
+  text-align: center;
+  color: #111;
+}
     h2 {
       font-size: 2em;
       margin-bottom: 30px;
@@ -35,20 +38,28 @@
     }
     .marker {
       position: absolute;
-      width: 18px;
-      height: 18px;
-      background: #e63946;
-      border: 3px solid white;
-      border-radius: 50%;
+      width: 40px; /* Increased to fit image */
+      height: 40px;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       transform: translate(-50%, -50%);
       transition: transform 0.2s ease;
       z-index: 1;
     }
+
+    .marker img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
     .marker:hover {
       transform: translate(-50%, -50%) scale(1.2);
       z-index: 1000;
+    }
+    .marker:hover > img {
+      opacity: 0;
     }
     .marker:hover .tooltip {
       display: flex;
@@ -121,6 +132,7 @@
 
     <!-- Arlington, TX -->
     <div class="marker" style="top: 87%; left: 54%;">
+        <img src="assets/117_logo.png" alt="Justinô Trân Justin" />
       <div class="tooltip">
         <img src="assets/justin_tran.jpg" alt="Justinô Trân Justin" />
         <div class="info">
@@ -132,6 +144,7 @@
 
     <!-- Albuquerque, NM -->
     <div class="marker" style="top: 81%; left: 42%;">
+        <img src="assets/dmlv_logo.png" alt="Giuse Bùi Minh Thiện Francis" />
       <div class="tooltip">
         <img src="assets/profile_pic.png" alt="Giuse Bùi Minh Thiện Francis" />
         <div class="info">
@@ -143,8 +156,9 @@
 
     <!-- Lincoln, NE -->
     <div class="marker" style="top: 74%; left: 55%;">
+        <img src="assets/nv_logo.png" alt="Giuse Mai Joseph-Tú Tommy" />
       <div class="tooltip">
-        <img src="assets/profile_pic.png" alt="Giuse Mai Joseph-Tú Tommy" />
+        <img src="assets/tommy_mai.jpg" alt="Giuse Mai Joseph-Tú Tommy" />
         <div class="info">
           <div class="name">Giuse Mai Joseph-Tú Tommy</div>
           <div class="title">Liên Đoàn Gioan Phaolô II<br>Maria Nữ Vương<br>Lincoln, NE</div>
@@ -154,6 +168,7 @@
 
     <!-- Seattle, WA -->
     <div class="marker" style="top: 59%; left: 31%;">
+        <img src="assets/xc_logo.png" alt="Giuse Trương Tom" />
       <div class="tooltip">
         <img src="assets/tom_truong.jpg" alt="Giuse Trương Tom" />
         <div class="info">
@@ -165,6 +180,7 @@
 
     <!-- Toronto, ON -->
     <div class="marker" style="top: 69%; left: 75%;">
+        <img src="assets/tmt_logo.png" alt="Phanxicô Xaviê Đào Eric-Khang" />
       <div class="tooltip">
         <img src="assets/eric_dao.jpg" alt="Phanxicô Xaviê Đào Eric-Khang" />
         <div class="info">
@@ -176,6 +192,7 @@
 
     <!-- Edmonton, AB -->
     <div class="marker" style="top: 52%; left: 42%;">
+        <img src="assets/fxt_logo.png" alt="Maria Ngô Thị Hương Lan" />
       <div class="tooltip">
         <img src="assets/lan_ngo.jpg" alt="Maria Ngô Thị Hương Lan" />
         <div class="info">
@@ -187,6 +204,7 @@
 
     <!-- Vancouver, BC -->
     <div class="marker" style="top: 55%; left: 31%;">
+        <img src="assets/tg_logo.png" alt="Maria Lê Lilly Mai" />
       <div class="tooltip">
         <img src="assets/lilly_mai.jpg" alt="Maria Lê Lilly Mai" />
         <div class="info">
@@ -209,6 +227,7 @@
 
     <!-- Fountain Valley, CA -->
     <div class="marker" style="top: 81%; left: 29%;">
+        <img src="assets/at_logo.png" alt="Maria Huỳnh Amor Vivian" />
       <div class="tooltip">
         <img src="assets/vivian_huynh.jpg" alt="Maria Huỳnh Amor Vivian" />
         <div class="info">
@@ -220,6 +239,7 @@
 
     <!-- San Antonio, TX -->
     <div class="marker" style="top: 92%; left: 51%;">
+        <img src="assets/dmu_logo.png" alt="Maria Clara Nguyễn Hoàng Nysan" />
       <div class="tooltip">
         <img src="assets/profile_pic.png" alt="Maria Clara Nguyễn Hoàng Nysan" />
         <div class="info">
@@ -231,8 +251,9 @@
 
     <!-- Stanton, CA -->
     <div class="marker" style="top: 81%; left: 30%;">
+        <img src="assets/pc_logo.png" alt="Martha Lê Mỹ BảoVân" />
       <div class="tooltip">
-        <img src="assets/profile_pic.png" alt="Martha Lê Mỹ BảoVân" />
+        <img src="assets/baovan_le.jpg" alt="Martha Lê Mỹ BảoVân" />
         <div class="info">
           <div class="name">Martha Lê Mỹ BảoVân</div>
           <div class="title">Liên Đoàn Nguồn Sống<br>Thánh Polycarp<br>Stanton, CA</div>
